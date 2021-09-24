@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Lab01/Lab01.iml" filepath="$PROJECT_DIR$/Lab01/Lab01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lab01/Problem01.iml" filepath="$PROJECT_DIR$/Lab01/Problem01.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/structured-programming-auca-2021.iml" filepath="$PROJECT_DIR$/.idea/structured-programming-auca-2021.iml" />
     </modules>
   </component>
