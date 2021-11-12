@@ -6,6 +6,6 @@ public class Problem01 {
         System.out.print("Some real number?");
         double a = inp.nextDouble();
         double x  = Math.abs(a);
-        System.out.printf("[" + a + "]" + "=" + " %.4f" ,  x);
+        System.out.printf("|" + a + "|" + "=" + " %.4f" ,  x);
     }
 }
