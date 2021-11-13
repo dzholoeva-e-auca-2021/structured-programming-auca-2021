@@ -6,7 +6,7 @@ public class uri1008 {
         int a = inp.nextInt();
         int b = inp.nextInt();
         double c = inp.nextDouble();
-        double salary = b*c ;
+        double salary = b * c;
         System.out.println("NUMBER = " + a);
         System.out.printf("SALARY = U$ %.2f", salary);
     }
