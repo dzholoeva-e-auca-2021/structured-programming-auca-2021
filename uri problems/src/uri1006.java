@@ -6,7 +6,7 @@ public class uri1006 {
         double A = inp.nextDouble();
         double B = inp.nextDouble();
         double C = inp.nextDouble();
-        double average = (2*A + 3*B + 5*C)/(2+3+5);
+        double average = (2*A + 3*B + 5*C)/(2 + 3 + 5);
         System.out.printf("MEDIA = %.1f", average);
     }
 }
