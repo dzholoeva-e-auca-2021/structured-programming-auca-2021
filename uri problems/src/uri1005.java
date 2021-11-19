@@ -7,6 +7,6 @@ public class uri1005 {
         double b = inp.nextDouble();
         double c = (3.5*a+7.5*b)/(3.5+7.5);
 
-        System.out.printf("MEDIA = %.5f", c);
+        System.out.printf("MEDIA = %.5f%n", c);
     }
 }

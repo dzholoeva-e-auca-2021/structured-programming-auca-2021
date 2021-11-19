@@ -6,6 +6,6 @@ public class uri1011 {
        double R = inp.nextDouble();
        final double pi = 3.14159;
        double V = (4.0/3.0)*pi*R*R*R;
-        System.out.printf("VOLUME = %.3f", V);
+        System.out.printf("VOLUME = %.3f%n", V);
     }
 }
