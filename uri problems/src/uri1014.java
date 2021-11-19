@@ -6,8 +6,8 @@ import java.util.Scanner;
             int X = inp.nextInt();
             double Y = inp.nextDouble();
             double fuel = X/Y ;
-            System.out.printf("%.3f", fuel);
-            System.out.print(" km/l");
+            System.out.printf("%.3f km/l", fuel);
+
         }
     }
 
