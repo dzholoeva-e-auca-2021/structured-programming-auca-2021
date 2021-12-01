@@ -12,9 +12,17 @@ public class Problem03 {
         Random rnd = new Random();
         int i = 0;
         while (i < nTest) {
-            System.out.println(-50 + rnd.nextInt(101));
-            System.out.println(-50 + rnd.nextInt(101));
+            int numOfCorrectAnswers = 0;
+            int x = -50 + rnd.nextInt(101);;
+           int y = -50 + rnd.nextInt(101);
+            System.out.printf("%d + %d = ", x, y);
+            int userAnswer = inp.nextInt();
+            if(x + y == userAnswer){
+                ++numOfCorrectAnswers;
+            }
             ++i;
         }
+        System.out.println("The number of correct answers:" + numOfCorrectAnswers);
+        System.out.println("The number of incorrect answers:" + (nTest - numOfCorrectAnswers));
     }
 }
