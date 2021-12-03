@@ -21,7 +21,7 @@ public class Problem01 extends PApplet {
     public void draw() {
         textSize(100);
         fill(255, 0, 0);
-        text("Hello, Processing!!!", 100, 100);
+        text("Hello, Processing!!!", 200, 400);
 
 
     }
