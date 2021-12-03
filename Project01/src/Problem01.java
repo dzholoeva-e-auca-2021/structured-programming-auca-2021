@@ -3,7 +3,7 @@ import processing.core.*;
 public class Problem01 extends PApplet {
 
     public void settings() {
-        fullScreen(800, 600);
+        fullScreen();
     }
 
     public void setup() {
