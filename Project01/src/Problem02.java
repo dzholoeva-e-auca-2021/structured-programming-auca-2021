@@ -5,10 +5,14 @@ public class Problem02 extends PApplet {
     float y;
     float a;
     float b;
+    float s;
+    float t;
     float dx;
     float dy;
     float da;
     float db;
+    float dt;
+    float ds;
     public void settings() {
         fullScreen();
     }
@@ -18,20 +22,28 @@ public class Problem02 extends PApplet {
          y = height/2f;
         a = width/2f ;
         b = height/2f;
-         dx = 2.5f;
-         dy =1.5f;
-        da = 2.5f;
-        db =1.5f;
+        s = width/2f ;
+        t = height/2f;
+         dx = 3.5f;
+         dy =2.5f;
+        da = 3.5f;
+        db =2.5f;
+        ds = 3.5f;
+        dt =2.5f;
     }
 
     public void draw() {
         background(0, 0, 0);
         print (x);
-        fill(255, 0, 0);
-        circle(a, b, 50);
-        a+=da - 1;
-        b+=db - 1;
-        fill(255,255,0);
+        fill(0, 255, 0);
+        circle(a-40, b-40, 50);
+        a+=da;
+        b+=db;
+        fill(0, 0, 255);
+        circle(s-80, t-80, 50);
+        s+=ds;
+        t+=dt;
+        fill(255,0,0);
         circle(x,y,50);
         x+=dx;
         y+=dy;
@@ -53,7 +65,7 @@ public class Problem02 extends PApplet {
             dy = -dy ;
         }
         if (a>=width) {
-            a = width -1;
+            a = width - 1;
             da = -da ;
         }
         if (a<0) {
@@ -61,16 +73,31 @@ public class Problem02 extends PApplet {
             da = -da ;
         }
         if (b>=height) {
-            b = height -1;
+            b = height - 1;
             db = -db ;
         }
         if (b<0) {
             b = 0;
             db = -db ;
         }
+        if (s>=width) {
+            s = width - 1;
+            ds = -ds ;
+        }
+        if (s<0) {
+            s = 0;
+            ds = -ds ;
+        }
+        if (t>=height) {
+            t = height - 1;
+            dt = -dt ;
+        }
+        if (t<0) {
+            t = 0;
+            dt = -dt ;
     }
 
-
+        }
     public static void main(String[] args) {
         PApplet.main("Problem02");
     }
