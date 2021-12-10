@@ -17,18 +17,22 @@ public class Problem01 extends PApplet {
 
     public void draw() {
         background(0, 0, 0);
+        text("Hello, Processing!!!", width/2.0f , height/2.0f);
+        fill(0,255,0);
         textSize(messageSize);
         fill(255, 0, 0);
         text("Hello, Processing!!!", width/2.0f , height/2.0f);
         if (messageSize < 130) {
             messageSize += 1;
         }
+        else {
+                messageSize -= 1;
+        }
 
     }
 
 
-            public static void main
-                (String[]args) {
+        public static void main(String[] args) {
         PApplet.main("Problem01");
             }
 
