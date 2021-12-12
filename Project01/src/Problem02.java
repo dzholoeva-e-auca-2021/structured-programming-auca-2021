@@ -7,6 +7,8 @@ public class Problem02 extends PApplet {
     float b;
     float s;
     float t;
+    float n;
+    float m;
     float dx;
     float dy;
     float da;
@@ -20,27 +22,29 @@ public class Problem02 extends PApplet {
     public void setup() {
          x = width/2f;
          y = height/2f;
-        a = width/2f ;
-        b = height/2f;
-        s = width/2f ;
-        t = height/2f;
-         dx = 3.5f;
-         dy =2.5f;
-        da = 3.5f;
-        db =2.5f;
-        ds = 3.5f;
-        dt =2.5f;
+        a = width/2f -40;
+        b = height/2f - 40;
+        s = width/2f - 80;
+        t = height/2f - 80;
+        n = random(3.5f , 10.5f);
+        m = random(2.5f, 5.5f);
+         dx = n;
+         dy = m;
+        da = n;
+        db = m;
+        ds =n;
+        dt =m;
     }
 
     public void draw() {
         background(0, 0, 0);
         print (x);
         fill(0, 255, 0);
-        circle(a-40, b-40, 50);
+        circle(a, b, 50);
         a+=da;
         b+=db;
         fill(0, 0, 255);
-        circle(s-80, t-80, 50);
+        circle(s, t, 50);
         s+=ds;
         t+=dt;
         fill(255,0,0);

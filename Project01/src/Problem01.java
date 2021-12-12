@@ -2,7 +2,7 @@ import processing.core.*;
 
 public class Problem01 extends PApplet {
     float messageSize = 10;
-
+    float text = 130;
     public void settings() {
         fullScreen();
 
@@ -32,13 +32,11 @@ public class Problem01 extends PApplet {
         if (messageSize < 130) {
             messageSize +=1;
         }
-        do {
-            messageSize -= 1;
-        } while
-        (messageSize == 10);
+       if (messageSize >= 130 ) {
+           messageSize -= 1;
+       }
+
     }
-
-
         public static void main(String[] args) {
         PApplet.main("Problem01");
             }
