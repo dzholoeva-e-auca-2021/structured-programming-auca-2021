@@ -32,8 +32,7 @@ float squareY;
         fill(255);
         square(squareX, squareY, 50);
 
-        fill(0);
-        square(squareX, squareY, 50);
+
     }
 
     public static void main(String[] args) {
