@@ -48,14 +48,48 @@ public class Problem04 extends PApplet {
                     break;
             }
 
-                stroke(0, 0, 255);
+                stroke(0, 0, 100);
             for (int i = 0; i < width; i++)
                 line(i * circleR, 0, i * circleR, height);
 
-            stroke(0, 0, 255);
+            stroke(0, 0, 100);
             for (int i = 0; i < height; i++)
                 line(0, i * circleR, width, i * circleR);
 
+            stroke(0, 0, 255);
+            for (int i = 0; i < width; i+=4)
+                line(i * circleR, 0, i * circleR, height);
+
+            stroke(0, 0, 255);
+            for (int i = 0; i < height; i+=4)
+                line(0, i * circleR, width, i * circleR);
+        }
+        circleX+=dx;
+        circleY+=dy;
+
+        if(circleX>=width) {
+            circleX = width - 1;
+            dx = -dx;
+        }
+        if(circleX<=0) {
+            circleX = 0 ;
+            dx=-dx ;
+        }
+        if(circleY>=height) {
+            circleY = height - 1;
+            dy = -dy;
+        }
+        if(circleY<=0) {
+            circleY = 0 ;
+            dy=-dy ;
+        }
+        if (circleX==pointX && circleY==pointY) {
+            push();
+
+            circle(pointX, pointY, circleR);
+            translate(random(0, width), random(0, height));
+
+            pop();
         }
     }
     public static void main(String[] args) {
