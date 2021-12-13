@@ -25,22 +25,39 @@ final float Num_of_circles = 50;
         alpha += 0.05f;
         beta += 0.1f;
 
-       fill(50,0,0);
+        fill(comp, comp, 0);
         circle(CENTER, CENTER, r);
 
+            for (int i = 0; i < Num_of_circles; i++) {
+                r -= dr;
+                comp += dComp;
+            }
 
             translate(150, 0);
+            fill(0,0,comp);
             circle(0, 0, 50);
+
+            for (int i = 0; i < Num_of_circles; i++) {
+                r -= dr;
+                comp += dComp;
+            }
+
 
             rotate(beta);
             translate(80, 0);
+            fill(255);
             circle(0, 0, 10);
+
+            for (int i = 0; i < Num_of_circles; i++) {
+                r -= dr;
+                comp += dComp;
+            }
+
 
             popMatrix();
             textSize(36);
             textAlign(CENTER, CENTER);
             text("Planets", width / 2f, 100);
-
 
         }
 
