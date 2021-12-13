@@ -18,8 +18,6 @@ public class Problem05 {
             System.out.println(e.getMessage());
         }
     }
-
-}
         static long gcd ( long a, long b) {
             a = Math.abs(a);
             b = Math.abs(b);
