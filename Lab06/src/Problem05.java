@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Problem04 {
+public class Problem05 {
     public static long main(String[] args) {
         Scanner inp = new Scanner(System.in);
         try {
@@ -17,6 +17,9 @@ public class Problem04 {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+}
         static long gcd ( long a, long b) {
             a = Math.abs(a);
             b = Math.abs(b);
@@ -36,4 +39,4 @@ public class Problem04 {
             return res;
         }
     }
-}
+
