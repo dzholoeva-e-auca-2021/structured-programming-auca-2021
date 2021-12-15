@@ -6,6 +6,8 @@ public class Problem04 extends PApplet {
     float circleR;
     float pointX;
     float pointY;
+    float pointA;
+    float pointB;
     float dx;
     float dy;
     public void settings() {
@@ -83,13 +85,12 @@ public class Problem04 extends PApplet {
             circleY = 0 ;
             dy=-dy ;
         }
-        if (circleX==pointX && circleY==pointY) {
-            push();
+        if (circleX==pointX || circleY==pointY) {
+            pointX=pointA;
+            pointY=pointB;
+            pointA = random(0, width);
+            pointB = random(0, height);
 
-            circle(pointX, pointY, circleR);
-            translate(random(0, width), random(0, height));
-
-            pop();
         }
     }
     public static void main(String[] args) {
