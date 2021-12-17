@@ -15,7 +15,7 @@
         public void draw() {
             background(0);
 
-            for (int i = 0; i < 100; ++i) {
+            for (int i = 0; i < num_of_circles; ++i) {
                 float x = random(width);
                 float y = random(height);
                 float r = random(10,70);
@@ -25,7 +25,7 @@
             }
         }
             public static void main(String[] args) {
-                PApplet.main("Problem01");
+                PApplet.main("Problem04");
             }
         }
 
