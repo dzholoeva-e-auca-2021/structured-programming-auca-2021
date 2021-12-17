@@ -11,7 +11,8 @@ public class Problem01 extends PApplet {
 
     public void setup() {
         background(0);
-        textAlign(CENTER, CENTER);
+
+        messageSize = 10;
 
 
     }
@@ -19,6 +20,7 @@ public class Problem01 extends PApplet {
     public void draw() {
         background(0, 0, 0);
         textSize(messageSize);
+        textAlign(CENTER, CENTER);
         fill(255, 0, 0);
         text("Hello, Processing!!!", width / 2.0f, height / 2.0f);
         if (messageSize < 130) {
@@ -29,11 +31,11 @@ public class Problem01 extends PApplet {
         text("Hello, Processing!!!", width / 2.0f, height / 2.0f);
         fill(0, 255, 0);
         textSize(messageSize);
-        if (messageSize < 130) {
+        if (messageSize < text) {
             messageSize +=1;
         }
-       if (messageSize >= 130 ) {
-           messageSize -= 1;
+       if (messageSize >= text ) {
+           messageSize -= text;
        }
 
     }
