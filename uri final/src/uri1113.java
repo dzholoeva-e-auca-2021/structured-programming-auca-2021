@@ -12,6 +12,8 @@ public class uri1113 {
         else {
                 System.out.println("Crescente");
             }
+
+
         }
     }
 
