@@ -24,16 +24,14 @@ float squareY;
         JOptionPane.showMessageDialog(null, "Incorrect number");
         System.exit(1);
     }
+        squareX = width / size;
+        squareY = height / size;
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        fill(255);
-        square(squareX, squareY, 50);
-
-
-    }
+            }
 
     public static void main(String[] args) {
         PApplet.main("Problem05");
