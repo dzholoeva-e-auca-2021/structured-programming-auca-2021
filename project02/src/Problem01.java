@@ -3,8 +3,9 @@ import processing.core.*;
 public class Problem01 extends PApplet {
     int nMoves = 0;
     static int[][] gameBoard = new int[4][4];
-float squareX = width / 2f;
-float squareY = height / 2f;
+
+float squareX = width/1f;
+float squareY = height/1f;
     public void settings() {
         fullScreen();
 
@@ -13,8 +14,10 @@ float squareY = height / 2f;
 
     public void setup() {
         background(0);
+
         printBoard(squareX, squareY);
-            if (keyPressed && key == CODED) {
+
+        if (keyPressed && key == CODED) {
                 System.out.println("Some key pressed");
             }
         }
@@ -26,10 +29,10 @@ float squareY = height / 2f;
         }
 
         public void mouseReleased () {
-            System.out.println("Mouse released");
-            nMoves++;
+                System.out.println("Mouse released");
+                nMoves++;
+            }
 
-    }
     public void draw() {
         fill(255, 255, 0);
         textSize(40);
@@ -51,11 +54,14 @@ float squareY = height / 2f;
 
     }
     private void printBoard(float squareX, float squareY){
+
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 if (gameBoard[row][col] != 16) {
-                   draw();
-                   rect
+
+                    fill(0,0,255);
+                    stroke(140);
+                   rect(squareX, squareY, 100, 100);
 
                 }
             }
