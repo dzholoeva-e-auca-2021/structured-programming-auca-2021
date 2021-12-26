@@ -1,7 +1,8 @@
 import processing.core.*;
 
 public class Problem01 extends PApplet {
-float nMoves;
+int nMoves = 0;
+static int[][] gameBoard = new int[4][4];
     public void settings() {
         fullScreen();
 
@@ -9,7 +10,21 @@ float nMoves;
     }
 
     public void setup() {
-        background(0);
+        printBoard();
+    }
+
+    private void printBoard() {
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                if (gameBoard[row][col] != 16) {
+                    System.out.printf("%.3d", gameBoard[row][col]);
+                } else {
+                    System.out.println("    ");
+                }
+            }
+    }
+
+    background(0);
         if (keyPressed && key == CODED) {
             System.out.println("Some key pressed");
         }
@@ -17,12 +32,15 @@ float nMoves;
 
     public void keyReleased (){
         System.out.println("Key released");
+        nMoves++;
+
     }
 
     public void mouseReleased() {
         System.out.println("Mouse released");
-
+        nMoves++;
     }
+
 
     public void draw() {
         fill(255, 255, 0);
@@ -39,22 +57,17 @@ float nMoves;
 
         fill(255, 255, 0);
         textSize(20);
-        text(nMoves, width / 1.6f, height / 2f);
-        if (mousePressed && keyPressed) {
-            for (float nMoves = 0; nMoves < 100; nMoves++) {
-                ++nMoves;
+        text(nMoves, width / 1.35f, height / 2f);
 
-                fill(0, 0, 255);
-                square(width / 3.2f, height / 3.2f, 400);
+        fill(0, 0, 255);
+        printBoard();
 
-
-            }
+    }
+        public static void main (String[]args){
+            PApplet.main("Problem01");
         }
-    }
-    public static void main(String[] args) {
-        PApplet.main("Problem01");
+
     }
 
-}
 
 
