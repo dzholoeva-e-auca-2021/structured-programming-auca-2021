@@ -21,7 +21,8 @@ public class Problem03 {
             }
             ++i;
         }
-        System.out.println("Number of correct unswers"+ numOfCorrectAnswers);
-        System.out.println("Number of incorrect unswers"+ (nTest - numOfCorrectAnswers));
+        System.out.println("Number of correct answers "+ numOfCorrectAnswers);
+        System.out.println("Number of incorrect answers "+ (nTest -numOfCorrectAnswers));
+
     }
 }

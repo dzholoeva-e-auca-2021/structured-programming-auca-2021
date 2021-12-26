@@ -5,7 +5,6 @@ public class uri1095 {
         Scanner inp = new Scanner(System.in);
         int I = -2, J = 65;
 
-            ;
             while (J > 0) {
                 I += 3;
                 J -= 5;
