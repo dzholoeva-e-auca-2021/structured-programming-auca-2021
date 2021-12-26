@@ -1,10 +1,7 @@
 import processing.core.*;
 
 public class Problem01 extends PApplet {
-float x1;
-float y1;
-    float x2;
-    float y2;
+float nMoves;
     public void settings() {
         fullScreen();
 
@@ -13,33 +10,47 @@ float y1;
 
     public void setup() {
         background(0);
-        if (keyPressed && key ==CODED) {
+        if (keyPressed && key == CODED) {
             System.out.println("Some key pressed");
         }
-
-
     }
-    //@Override
+
     public void keyReleased (){
         System.out.println("Key released");
     }
-    //@Override
-    public void mouseRealeased () {
+
+    public void mouseReleased() {
+        System.out.println("Mouse released");
 
     }
-    public void draw() {
-        fill(0,0,255);
-        square(width/3.5f, height/4.5f, 500);
 
-       line(x1, y1, x2, y2);
-       stroke(140, 140, 140);
-        for (float x1= width / 3.5f; x1 < 500; x1 += (500 / 4f)) {
-            for (float y1 = height / 3.5f; y1 < 500; y1 += (500 / 4f)) {
+    public void draw() {
+        fill(255, 255, 0);
+        textSize(40);
+        text("Game 15", width / 2.5f, height / 8f);
+
+        fill(255, 255, 0);
+        textSize(20);
+        text("Start/Restart: Enter", width / 2.5f, height / 1.1f);
+
+        fill(255, 255, 0);
+        textSize(20);
+        text("Moves:", width / 1.5f, height / 2f);
+
+        fill(255, 255, 0);
+        textSize(20);
+        text(nMoves, width / 1.6f, height / 2f);
+        if (mousePressed && keyPressed) {
+            for (float nMoves = 0; nMoves < 100; nMoves++) {
+                ++nMoves;
+
+                fill(0, 0, 255);
+                square(width / 3.2f, height / 3.2f, 400);
+
+
             }
         }
-
     }
-
     public static void main(String[] args) {
         PApplet.main("Problem01");
     }
