@@ -3,8 +3,8 @@ import processing.core.*;
 public class Problem01 extends PApplet {
     int nMoves = 0;
     static int[][] gameBoard = new int[4][4];
-float squareX = width / 3.5f;
-float squareY = height / 5f;
+float squareX = width / 2f;
+float squareY = height / 2f;
     public void settings() {
         fullScreen();
 
@@ -28,22 +28,7 @@ float squareY = height / 5f;
         public void mouseReleased () {
             System.out.println("Mouse released");
             nMoves++;
-        }
-    private void printBoard(float squareX, float squareY){
-        for (int row = 0; row < 4; row++) {
-            for (int col = 0; col < 4; col++) {
-                if (gameBoard[row][col] != 16) {
-                    pushMatrix();
 
-                    translate(squareX, squareY);
-
-                    stroke(130, 130, 130);
-                    line( row, col, row, col);
-                    popMatrix();
-
-                }
-            }
-        }
     }
     public void draw() {
         fill(255, 255, 0);
@@ -64,6 +49,17 @@ float squareY = height / 5f;
 
         printBoard(squareX, squareY);
 
+    }
+    private void printBoard(float squareX, float squareY){
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                if (gameBoard[row][col] != 16) {
+                   draw();
+                   rect
+
+                }
+            }
+        }
     }
 
 
