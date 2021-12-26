@@ -1,8 +1,10 @@
 import processing.core.*;
 
 public class Problem01 extends PApplet {
-int nMoves = 0;
-static int[][] gameBoard = new int[4][4];
+    int nMoves = 0;
+    static int[][] gameBoard = new int[4][4];
+float squareX = width / 3.5f;
+float squareY = height / 5f;
     public void settings() {
         fullScreen();
 
@@ -10,38 +12,39 @@ static int[][] gameBoard = new int[4][4];
     }
 
     public void setup() {
-        printBoard();
-    }
+        background(0);
+        printBoard(squareX, squareY);
+            if (keyPressed && key == CODED) {
+                System.out.println("Some key pressed");
+            }
+        }
 
-    private void printBoard() {
+        public void keyReleased () {
+            System.out.println("Key released");
+            nMoves++;
+
+        }
+
+        public void mouseReleased () {
+            System.out.println("Mouse released");
+            nMoves++;
+        }
+    private void printBoard(float squareX, float squareY){
         for (int row = 0; row < 4; row++) {
             for (int col = 0; col < 4; col++) {
                 if (gameBoard[row][col] != 16) {
-                    System.out.printf("%.3d", gameBoard[row][col]);
-                } else {
-                    System.out.println("    ");
+                    pushMatrix();
+
+                    translate(squareX, squareY);
+
+                    stroke(130, 130, 130);
+                    line( row, col, row, col);
+                    popMatrix();
+
                 }
             }
-    }
-
-    background(0);
-        if (keyPressed && key == CODED) {
-            System.out.println("Some key pressed");
         }
     }
-
-    public void keyReleased (){
-        System.out.println("Key released");
-        nMoves++;
-
-    }
-
-    public void mouseReleased() {
-        System.out.println("Mouse released");
-        nMoves++;
-    }
-
-
     public void draw() {
         fill(255, 255, 0);
         textSize(40);
@@ -59,15 +62,15 @@ static int[][] gameBoard = new int[4][4];
         textSize(20);
         text(nMoves, width / 1.35f, height / 2f);
 
-        fill(0, 0, 255);
-        printBoard();
-
-    }
-        public static void main (String[]args){
-            PApplet.main("Problem01");
-        }
+        printBoard(squareX, squareY);
 
     }
 
+
+    public static void main(String[] args) {
+        PApplet.main("Problem01");
+    }
+
+}
 
 
