@@ -6,6 +6,10 @@ public class Problem05 extends PApplet {
 float size;
 float squareX;
 float squareY;
+int boardWidth = 500;
+int boardHeight = 500;
+float boardX;
+float boardY;
 
     public void settings() {
         fullScreen();
@@ -24,12 +28,15 @@ float squareY;
         JOptionPane.showMessageDialog(null, "Incorrect number");
         System.exit(1);
     }
-        squareX = width / size;
-        squareY = height / size;
+        squareX = boardWidth / size ;
+        squareY = boardHeight / size;
+        boardX = width/3f;
+        boardY = height/1.5f;
     }
 
     public void draw() {
         background(0, 0, 0);
+
         for (int i = 0; i < size; i ++) {
             for (int j = 0; j < size; j ++) {
                 if ((i + j + 1) % 2 == 0) {
@@ -37,10 +44,12 @@ float squareY;
                 } else {
                     fill(0, 0, 0);
                 }
+                boardWidth ++;
+                boardHeight++;
                 rect(i * squareX, j * squareY, (i + 1) * squareX, (j + 1) * squareY);
             }
         }
-
+        }
     public static void main(String[] args) {
         PApplet.main("Problem05");
     }
