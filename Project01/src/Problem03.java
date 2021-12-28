@@ -30,28 +30,32 @@ public class Problem03 extends PApplet {
         float textLowX = width / 2f;
         float textLowY = height / 1.1f;
 
-        stroke(73, 113, 222);
-        fill(0, 0, 255);
-        rect(rectTopLeftX, rectTopLeftY, RECT_WIDTH, RECT_HEIGHT);
+        {
+            stroke(73, 113, 222);
+            fill(0, 0, 255);
+            rect(rectTopLeftX, rectTopLeftY, RECT_WIDTH, RECT_HEIGHT);
 
-        fill(red, green, blue);
-        textSize(31);
-        text("Java Programming Language", rectTopLeftX * 1.5f + width / 20f, rectTopLeftY * 1.5f - height/50f);
-        if (mouseX >= rectTopLeftX && mouseX <= (rectTopLeftX + RECT_WIDTH) &&
-                mouseY >= rectTopLeftY && mouseY <= (rectTopLeftY + RECT_HEIGHT)) {
-            red = 255;
-            green = 0;
-            blue = 0;
+            fill(red, green, blue);
+            textSize(31);
+            text("Java Programming Language", rectTopLeftX * 1.5f + width / 20f,
+                    rectTopLeftY * 1.5f - height / 50f);
+            if (mouseX >= rectTopLeftX && mouseX <= (rectTopLeftX + RECT_WIDTH) &&
+                    mouseY >= rectTopLeftY && mouseY <= (rectTopLeftY + RECT_HEIGHT)) {
+                red = 255;
+                green = 0;
+                blue = 0;
 
-            fill(255, 255, 0);
-            textSize(20);
-            text("Year: 1995. PYPL Index:2.", textLowX, textLowY);
+                fill(255, 255, 0);
+                textSize(20);
+                text("Year: 1995. PYPL Index:2.", textLowX, textLowY);
 
-        } else {
-            red = 255;
-            green = 255;
-            blue = 255;
+            } else {
+                red = 255;
+                green = 255;
+                blue = 255;
+            }
         }
+        {
             stroke(73, 113, 222);
             fill(0, 0, 255);
             rect(rectMidX, rectMidY, RECT_WIDTH, RECT_HEIGHT);
@@ -73,30 +77,31 @@ public class Problem03 extends PApplet {
                 red = 255;
                 green = 255;
                 blue = 255;
+            } }
+        {
+            stroke(73, 113, 222);
+            fill(0, 0, 255);
+            rect(rectLowX, rectLowY, RECT_WIDTH, RECT_HEIGHT);
+
+            fill(red, green, blue);
+            textSize(31);
+            text("Scala Programming Language", rectLowX * 1.5f + width / 20f, rectLowY * 1.5f - height / 6f);
+            if (mouseX >= rectLowX && mouseX <= (rectLowX + RECT_WIDTH) &&
+                    mouseY >= rectLowY && mouseY <= (rectLowY + RECT_HEIGHT)) {
+
+                red = 255;
+                green = 0;
+                blue = 0;
+
+                fill(255, 255, 0);
+                textSize(20);
+                text("Year: 2004. PYPL Index:20.", textLowX, textLowY);
+            } else {
+                red = 255;
+                green = 255;
+                blue = 255;
             }
-                stroke(73, 113, 222);
-                fill(0, 0, 255);
-                rect(rectLowX, rectLowY, RECT_WIDTH, RECT_HEIGHT);
-
-                fill(red, green, blue);
-                textSize(31);
-                text("Scala Programming Language", rectLowX * 1.5f+ width/20f, rectLowY * 1.5f - height/6f);
-                if (mouseX >= rectLowX && mouseX <= (rectLowX + RECT_WIDTH) &&
-                        mouseY >= rectLowY && mouseY<=(rectLowY+RECT_HEIGHT)) {
-
-                    red = 255;
-                    green = 0;
-                    blue = 0;
-
-                    fill(255,255,0);
-                    textSize(20);
-                    text("Year: 2004. PYPL Index:20.", textLowX, textLowY);
-                } else {
-                    red = 255;
-                    green = 255;
-                    blue = 255;
-                }
-
+        }
 
                 }
     public static void main(String[] args) {

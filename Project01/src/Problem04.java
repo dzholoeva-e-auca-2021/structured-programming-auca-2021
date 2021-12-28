@@ -8,6 +8,10 @@ public class Problem04 extends PApplet {
     float pointY;
     float pointA;
     float pointB;
+    float boardTopX;
+    float boardTopY;
+    float boardLowX;
+    float boardLowY;
     float dx;
     float dy;
     public void settings() {
@@ -18,8 +22,12 @@ public class Problem04 extends PApplet {
         circleX = width /2f ;
         circleY = height/2f ;
         circleR = height/20f;
-        pointX = random(0, width);
-        pointY = random(0, height);
+        boardTopX = width/6f;
+        boardTopY = height/6f;
+        boardLowX = width/1.5f;
+        boardLowY = height/1.5f;
+        pointX = random(boardTopX, boardLowX);
+        pointY = random(boardTopY, boardLowY);
         frameRate(10);
 
     }
@@ -51,20 +59,20 @@ public class Problem04 extends PApplet {
             }
 
             stroke(0, 0, 100);
-            for (float i = width/3f; i < width; i++) {
-                line(i * circleR, height / 6f, i * circleR, height / 1.5f);
+            for (float i = 0; i < boardLowX; i++) {
+                line(i * circleR, 0, i * circleR, height);
             }
             stroke(0, 0, 100);
-            for (int i = 0; i < height; i++)
+            for (int i = 0; i < boardLowY; i++) {
                 line(0, i * circleR, width, i * circleR);
-
-        stroke(0, 0, 255);
-        for (int i = 0; i < width; i += 4)
-            line(i * circleR, 0, i * circleR, height);
-
-                stroke(0, 0, 255);
-                for (int i = 0; i < height; i += 4)
-                    line(0, i * circleR, width, i * circleR);
+            }
+            stroke(0, 0, 255);
+            for (int i = 0; i < boardLowX; i += 4) {
+                line(i * circleR, 0, i * circleR, height);
+            }
+            stroke(0, 0, 255);
+            for (int i = 0; i < boardLowY; i += 4) {
+                line(0, i * circleR, width, i * circleR);
             }
             circleX += dx;
             circleY += dy;
@@ -89,20 +97,20 @@ public class Problem04 extends PApplet {
                     circleY >= pointY && circleY <= pointY + circleR) {
                 pointX = pointA;
                 pointY = pointB;
-                pointA = random(0, width / 2);
-                pointB = random(0, height / 2);
+                pointA = random(boardTopX, boardLowX);
+                pointB = random(boardTopY, boardLowY);
             }
             if (circleX >= pointA && circleX <= pointA + circleR &&
                     circleY >= pointB && circleY <= pointB + circleR) {
                 pointA = pointX;
                 pointB = pointY;
-                pointA = random(0, width);
-                pointB = random(0, height);
+                pointA = random(boardTopX, boardLowX);
+                pointB = random(boardTopY, boardLowY);
             }
         }
-
-    public static void main(String[] args) {
-        PApplet.main("Problem04");
     }
+        public static void main (String[]args){
+            PApplet.main("Problem04");
+        }
 
-}
+    }
