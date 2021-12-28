@@ -3,8 +3,9 @@ import processing.core.*;
 public class Problem03 extends PApplet {
     static final float RECT_WIDTH = 500;
     static final float RECT_HEIGHT = 100;
-    float white = 255;
-    float red = 255;
+    float red ;
+    float green;
+    float blue;
 
     public void settings() {
         fullScreen();
@@ -32,35 +33,62 @@ public class Problem03 extends PApplet {
         stroke(73, 113, 222);
         fill(0, 0, 255);
         rect(rectTopLeftX, rectTopLeftY, RECT_WIDTH, RECT_HEIGHT);
-        text("Java Programming Language", rectTopLeftX / 2f, rectTopLeftY / 2f);
 
-        stroke(73, 113, 222);
-        fill(0, 0, 255);
-        rect(rectMidX, rectMidY, RECT_WIDTH, RECT_HEIGHT);
-        text("Kotlin Programming Language", rectMidX / 2f, rectMidY / 2f);
-        if (mouseX == rectMidX && mouseY == rectMidY) {
-            fill(red, 0, 0);
-
-            fill(255,255,0);
+        fill(red, green, blue);
+        text("Java Programming Language", rectTopLeftX * 1.5f + width/20f, rectTopLeftY * 1.5f);
+        if (mouseX == rectTopLeftX * 1.5f && mouseY == rectTopLeftY * 1.5f) {
+            red = 255;
+            green = 0;
+            blue = 0;
             text("Year: 2011. PYPL Index:11.", textLowX, textLowY);
 
         } else {
-            fill(white);
+            red = 255;
+            green = 255;
+            blue = 255;
 
             stroke(73, 113, 222);
             fill(0, 0, 255);
-            rect(rectLowX, rectLowY, RECT_WIDTH, RECT_HEIGHT);
-            text("Scala Programming Language", rectLowX / 2f, rectLowY / 2f);
-            if (mouseX == rectLowX && mouseY == rectLowY) {
-                fill(red, 0, 0);
+            rect(rectMidX, rectMidY, RECT_WIDTH, RECT_HEIGHT);
+
+            fill(red, green, blue);
+            textAlign(CENTER, CENTER);
+            text("Kotlin Programming Language", rectMidX * 1.5f+ width/20f, rectMidY * 1.5f - height/12.25f);
+            if (mouseX == (rectMidX * 1.5f) && mouseY == (rectMidY * 1.5f)) {
+                red = 255;
+                green = 0;
+                blue = 0;
+
+            fill(255, 255, 0);
                 text("Year: 2011. PYPL Index:11.", textLowX, textLowY);
+
             } else {
-                fill(white);
+                red = 255;
+                green = 255;
+                blue = 255;
 
-                fill(0, 0, 100);
-                ellipse(mouseX, mouseY, 50, 50);
+                stroke(73, 113, 222);
+                fill(0, 0, 255);
+                rect(rectLowX, rectLowY, RECT_WIDTH, RECT_HEIGHT);
+
+                fill(red, green, blue);
+                text("Scala Programming Language", rectLowX * 1.5f+ width/20f, rectLowY * 1.5f - height/7f);
+                if (mouseX == (rectLowX * 1.5f) && mouseY == (rectLowY * 1.5f)) {
+                    red = 255;
+                    green = 0;
+                    blue = 0;
+
+                    text("Year: 2011. PYPL Index:11.", textLowX, textLowY);
+                } else {
+                    red = 255;
+                    green = 255;
+                    blue = 255;
+
+                    fill(0, 0, 100);
+                    ellipse(mouseX, mouseY, 10, 10);
 
 
+                }
             }
         }
     }
