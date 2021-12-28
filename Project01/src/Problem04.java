@@ -50,7 +50,7 @@ public class Problem04 extends PApplet {
                     break;
             }
 
-                stroke(0, 0, 100);
+            stroke(0, 0, 100);
             for (int i = 0; i < width; i++)
                 line(i * circleR, 0, i * circleR, height);
 
@@ -59,38 +59,45 @@ public class Problem04 extends PApplet {
                 line(0, i * circleR, width, i * circleR);
 
             stroke(0, 0, 255);
-            for (int i = 0; i < width; i+=4)
+            for (int i = 0; i < width; i += 4)
                 line(i * circleR, 0, i * circleR, height);
 
             stroke(0, 0, 255);
-            for (int i = 0; i < height; i+=4)
+            for (int i = 0; i < height; i += 4)
                 line(0, i * circleR, width, i * circleR);
         }
-        circleX+=dx;
-        circleY+=dy;
+        circleX += dx;
+        circleY += dy;
 
-        if(circleX>=width) {
+        if (circleX >= width) {
             circleX = width - 1;
             dx = -dx;
         }
-        if(circleX<=0) {
-            circleX = 0 ;
-            dx=-dx ;
+        if (circleX <= 0) {
+            circleX = 0;
+            dx = -dx;
         }
-        if(circleY>=height) {
+        if (circleY >= height) {
             circleY = height - 1;
             dy = -dy;
         }
-        if(circleY<=0) {
-            circleY = 0 ;
-            dy=-dy ;
+        if (circleY <= 0) {
+            circleY = 0;
+            dy = -dy;
         }
-        if (circleX==pointX || circleY==pointY) {
-            pointX=pointA;
-            pointY=pointB;
+        if (circleX >= pointX && circleX <= pointX + circleR &&
+                circleY >= pointY && circleY <= pointY + circleR) {
+            pointX = pointA;
+            pointY = pointB;
             pointA = random(0, width);
             pointB = random(0, height);
-
+        }
+        if (circleX >= pointA && circleX <= pointA + circleR &&
+                circleY >= pointB && circleY <= pointB + circleR) {
+            pointA = pointX;
+            pointB = pointY;
+            pointA = random(0, width);
+            pointB = random(0, height);
         }
     }
     public static void main(String[] args) {
