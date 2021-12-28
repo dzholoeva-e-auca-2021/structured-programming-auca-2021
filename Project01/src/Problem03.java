@@ -37,7 +37,8 @@ public class Problem03 extends PApplet {
         fill(red, green, blue);
         textSize(31);
         text("Java Programming Language", rectTopLeftX * 1.5f + width / 20f, rectTopLeftY * 1.5f);
-        if (mouseX >= rectTopLeftX && mouseX <= (rectTopLeftX + RECT_WIDTH) && mouseY >= rectTopLeftY && mouseY <= (rectTopLeftY + RECT_HEIGHT)) {
+        if (mouseX >= rectTopLeftX && mouseX <= (rectTopLeftX + RECT_WIDTH) &&
+                mouseY >= rectTopLeftY && mouseY <= (rectTopLeftY + RECT_HEIGHT)) {
             red = 255;
             green = 0;
             blue = 0;
@@ -58,7 +59,8 @@ public class Problem03 extends PApplet {
             fill(red, green, blue);
             textSize(31);
             text("Kotlin Programming Language", rectMidX * 1.5f+ width/20f, rectMidY * 1.5f - height/12.25f);
-            if (mouseX >= rectMidX && mouseX <= (rectMidX + RECT_WIDTH) && mouseY >= rectMidY && mouseY<=(rectMidY+RECT_HEIGHT)) {
+            if (mouseX >= rectMidX && mouseX <= (rectMidX + RECT_WIDTH) &&
+                    mouseY >= rectMidY && mouseY<=(rectMidY+RECT_HEIGHT)) {
 
                 red = 255;
                 green = 0;
@@ -80,7 +82,8 @@ public class Problem03 extends PApplet {
                 fill(red, green, blue);
                 textSize(31);
                 text("Scala Programming Language", rectLowX * 1.5f+ width/20f, rectLowY * 1.5f - height/7f);
-                if (mouseX >= rectLowX && mouseX <= (rectLowX + RECT_WIDTH) && mouseY >= rectLowY && mouseY<=(rectLowY+RECT_HEIGHT)) {
+                if (mouseX >= rectLowX && mouseX <= (rectLowX + RECT_WIDTH) &&
+                        mouseY >= rectLowY && mouseY<=(rectLowY+RECT_HEIGHT)) {
 
                     red = 255;
                     green = 0;

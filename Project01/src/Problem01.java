@@ -1,9 +1,11 @@
 import processing.core.*;
 
 public class Problem01 extends PApplet {
-    float messageSize = 10;
-    float text = 130;
-    public void settings() {
+    float messageSize;
+    float MIN_SIZE = 10;
+    float MAX_SIZE = 130;
+    float color;
+public void settings() {
         fullScreen();
 
 
@@ -11,8 +13,7 @@ public class Problem01 extends PApplet {
 
     public void setup() {
         background(0);
-
-        messageSize = 10;
+        messageSize = MIN_SIZE;
 
 
     }
@@ -21,13 +22,21 @@ public class Problem01 extends PApplet {
         background(0, 0, 0);
         textSize(messageSize);
         textAlign(CENTER, CENTER);
-        fill(255, 0, 0);
+        fill(color);
         text("Hello, Processing!!!", width / 2.0f, height / 2.0f);
-        if (messageSize < text) {
+        if (messageSize < MAX_SIZE) {
             messageSize += 1;
+        } else
+        if (messageSize > MIN_SIZE) {
+            messageSize -= 1;
+            MAX_SIZE -= 1;
         }
-        messageSize -= 1;
-
+        else if (messageSize == MIN_SIZE){
+            color++;
+            if ( color > 2) {
+                color = 0;
+            }
+        }
     }
         public static void main(String[] args) {
         PApplet.main("Problem01");

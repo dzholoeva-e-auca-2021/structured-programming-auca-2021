@@ -51,55 +51,56 @@ public class Problem04 extends PApplet {
             }
 
             stroke(0, 0, 100);
-            for (int i = 0; i < width; i++)
-                line(i * circleR, 0, i * circleR, height);
-
+            for (int i = 0; i < width; i++) {
+                line(i * circleR, height / 6f, i * circleR, height / 1.5f);
+            }
             stroke(0, 0, 100);
             for (int i = 0; i < height; i++)
                 line(0, i * circleR, width, i * circleR);
 
-            stroke(0, 0, 255);
-            for (int i = 0; i < width; i += 4)
-                line(i * circleR, 0, i * circleR, height);
+        stroke(0, 0, 255);
+        for (int i = 0; i < width; i += 4)
+            line(i * circleR, 0, i * circleR, height);
 
-            stroke(0, 0, 255);
-            for (int i = 0; i < height; i += 4)
-                line(0, i * circleR, width, i * circleR);
-        }
-        circleX += dx;
-        circleY += dy;
+                stroke(0, 0, 255);
+                for (int i = 0; i < height; i += 4)
+                    line(0, i * circleR, width, i * circleR);
+            }
+            circleX += dx;
+            circleY += dy;
 
-        if (circleX >= width) {
-            circleX = width - 1;
-            dx = -dx;
+            if (circleX >= width) {
+                circleX = width - 1;
+                dx = -dx;
+            }
+            if (circleX <= 0) {
+                circleX = 0;
+                dx = -dx;
+            }
+            if (circleY >= height) {
+                circleY = height - 1;
+                dy = -dy;
+            }
+            if (circleY <= 0) {
+                circleY = 0;
+                dy = -dy;
+            }
+            if (circleX >= pointX && circleX <= pointX + circleR &&
+                    circleY >= pointY && circleY <= pointY + circleR) {
+                pointX = pointA;
+                pointY = pointB;
+                pointA = random(0, width / 2);
+                pointB = random(0, height / 2);
+            }
+            if (circleX >= pointA && circleX <= pointA + circleR &&
+                    circleY >= pointB && circleY <= pointB + circleR) {
+                pointA = pointX;
+                pointB = pointY;
+                pointA = random(0, width);
+                pointB = random(0, height);
+            }
         }
-        if (circleX <= 0) {
-            circleX = 0;
-            dx = -dx;
-        }
-        if (circleY >= height) {
-            circleY = height - 1;
-            dy = -dy;
-        }
-        if (circleY <= 0) {
-            circleY = 0;
-            dy = -dy;
-        }
-        if (circleX >= pointX && circleX <= pointX + circleR &&
-                circleY >= pointY && circleY <= pointY + circleR) {
-            pointX = pointA;
-            pointY = pointB;
-            pointA = random(0, width);
-            pointB = random(0, height);
-        }
-        if (circleX >= pointA && circleX <= pointA + circleR &&
-                circleY >= pointB && circleY <= pointB + circleR) {
-            pointA = pointX;
-            pointB = pointY;
-            pointA = random(0, width);
-            pointB = random(0, height);
-        }
-    }
+
     public static void main(String[] args) {
         PApplet.main("Problem04");
     }
