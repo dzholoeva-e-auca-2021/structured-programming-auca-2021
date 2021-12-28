@@ -24,8 +24,8 @@ public class Problem04 extends PApplet {
         circleR = height/20f;
         boardTopX = width/6f;
         boardTopY = height/6f;
-        boardLowX = width/1.5f;
-        boardLowY = height/1.5f;
+        boardLowX = width/1.2f;
+        boardLowY = height/1.2f;
         pointX = random(boardTopX, boardLowX);
         pointY = random(boardTopY, boardLowY);
         frameRate(10);
@@ -59,38 +59,38 @@ public class Problem04 extends PApplet {
             }
 
             stroke(0, 0, 100);
-            for (float i = 0; i < boardLowX; i++) {
-                line(i * circleR, 0, i * circleR, height);
+            for (float i = boardTopX; i < boardLowX; i+=circleR) {
+                line(i, boardTopY, i, boardLowY);
             }
             stroke(0, 0, 100);
-            for (int i = 0; i < boardLowY; i++) {
-                line(0, i * circleR, width, i * circleR);
+            for (float i = boardTopY; i < boardLowY; i+=circleR) {
+                line(boardTopX, i , boardLowX, i);
             }
             stroke(0, 0, 255);
-            for (int i = 0; i < boardLowX; i += 4) {
-                line(i * circleR, 0, i * circleR, height);
+            for (float i = boardTopX; i < boardLowX; i += 4*circleR) {
+                line(i , boardTopY, i , boardLowY);
             }
             stroke(0, 0, 255);
-            for (int i = 0; i < boardLowY; i += 4) {
-                line(0, i * circleR, width, i * circleR);
+            for (float i = boardTopY; i < boardLowY; i += 4*circleR) {
+                line(boardTopX, i , boardLowX, i );
             }
             circleX += dx;
             circleY += dy;
 
-            if (circleX >= width) {
-                circleX = width - 1;
+            if (circleX >= boardLowX) {
+                circleX = boardLowX - 1;
                 dx = -dx;
             }
-            if (circleX <= 0) {
-                circleX = 0;
+            if (circleX <= boardTopX) {
+                circleX = boardTopX;
                 dx = -dx;
             }
-            if (circleY >= height) {
-                circleY = height - 1;
+            if (circleY >= boardLowY) {
+                circleY = boardLowY - 1;
                 dy = -dy;
             }
-            if (circleY <= 0) {
-                circleY = 0;
+            if (circleY <= boardTopY) {
+                circleY = boardTopY;
                 dy = -dy;
             }
             if (circleX >= pointX && circleX <= pointX + circleR &&
