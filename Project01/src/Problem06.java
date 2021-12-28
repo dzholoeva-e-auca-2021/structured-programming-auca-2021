@@ -1,9 +1,8 @@
 import processing.core.*;
 
 public class Problem06 extends PApplet {
-
 float alpha;
-    float beta;
+float beta;
     public void settings() {
         fullScreen();
     }
@@ -51,16 +50,17 @@ float alpha;
             fill(0, 0, comp);
             circle(0, 0, radius_earth);
         }
+        {
+            rotate(beta);
+            translate(80, 0);
 
-        rotate(beta);
-        translate(80, 0);
-
-        for (int i = 0; i < Num_of_circles; i++) {
-            noStroke();
-            radius_moon -= dr4;
-            comp += dComp;
-            fill(comp);
-            circle(0, 0, radius_moon);
+            for (int i = 0; i < Num_of_circles; i++) {
+                noStroke();
+                radius_moon -= dr4;
+                comp += dComp;
+                fill(comp);
+                circle(0, 0, radius_moon);
+            }
         }
 
 
