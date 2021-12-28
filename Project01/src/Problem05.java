@@ -8,8 +8,10 @@ float squareX;
 float squareY;
 int boardWidth = 500;
 int boardHeight = 500;
-float boardX;
-float boardY;
+float boardLeftX;
+float boardRightX;
+float boardTopY;
+float boardLowY;
 
     public void settings() {
         fullScreen();
@@ -30,23 +32,25 @@ float boardY;
     }
         squareX = boardWidth / size ;
         squareY = boardHeight / size;
-        boardX = width/3f;
-        boardY = height/1.5f;
+        boardLeftX = width/4f;
+        boardRightX = width/8f;
+        boardTopY = height/10f;
+        boardLowY = height/1.5f;
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        for (int i = 0; i < size; i ++) {
-            for (int j = 0; j < size; j ++) {
+        for (float i = boardLeftX; i < boardRightX; i += squareX) {
+            for (float j = boardTopY; j < boardLowY; j +=squareY) {
+                rect(i , j , (i + 1) , (j + 1));
+
                 if ((i + j + 1) % 2 == 0) {
-                    fill(255, 255, 255);
+                    fill(255);
                 } else {
-                    fill(0, 0, 0);
+                    fill(10);
                 }
-                boardWidth ++;
-                boardHeight++;
-                rect(i * squareX, j * squareY, (i + 1) * squareX, (j + 1) * squareY);
+
             }
         }
         }

@@ -23,10 +23,10 @@ public class Problem04 extends PApplet {
         circleX = width /2f ;
         circleY = height/2f ;
         circleR = height/20f;
-        boardTopX = width/6f;
+        boardTopX = width/5.5f;
         boardTopY = height/6f;
         boardLowX = width/1.2f;
-        boardLowY = height/1.2f;
+        boardLowY = height/1.25f;
         pointX = random(boardTopX, boardLowX);
         pointY = random(boardTopY, boardLowY);
         frameRate(10);
@@ -40,9 +40,9 @@ public class Problem04 extends PApplet {
         fill(0,255,0);
         textAlign(CENTER, CENTER);
         textSize(25);
-        text("Game: Collect Yellow Circles using Arrow Buttons", width/2f, height/9f);
-        text("Score:", width/2f, height/1.1f);
-        text(score, (width/2f + width/20f), height/1.1f);
+        text("Game: Collect Yellow Circles using Arrow Buttons", width/2f, height/10f);
+        text("Score:", width/2f, height/1.05f);
+        text(score, (width/2f + width/20f), height/1.05f);
         fill(255, 255, 0);
         circle(pointX, pointY, circleR);
 
@@ -85,19 +85,19 @@ public class Problem04 extends PApplet {
             circleY += dy;
 
             if (circleX >= boardLowX) {
-                circleX = boardLowX - circleR;
+                circleX = boardLowX - circleR/2;
                 dx = -dx;
             }
             if (circleX <= boardTopX) {
-                circleX = boardTopX;
+                circleX = boardTopX + circleR/2;
                 dx = -dx;
             }
             if (circleY >= boardLowY) {
-                circleY = boardLowY - circleR;
+                circleY = boardLowY - circleR/2;
                 dy = -dy;
             }
             if (circleY <= boardTopY) {
-                circleY = boardTopY;
+                circleY = boardTopY + circleR/2;
                 dy = -dy;
             }
             if (circleX >= pointX && circleX <= pointX + circleR &&
