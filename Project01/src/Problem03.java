@@ -3,7 +3,7 @@ import processing.core.*;
 public class Problem03 extends PApplet {
     static final float RECT_WIDTH = 500;
     static final float RECT_HEIGHT = 100;
-    float red ;
+    float red;
     float green;
     float blue;
 
@@ -36,7 +36,7 @@ public class Problem03 extends PApplet {
 
         fill(red, green, blue);
         textSize(31);
-        text("Java Programming Language", rectTopLeftX * 1.5f + width / 20f, rectTopLeftY * 1.5f);
+        text("Java Programming Language", rectTopLeftX * 1.5f + width / 20f, rectTopLeftY * 1.5f - height/50f);
         if (mouseX >= rectTopLeftX && mouseX <= (rectTopLeftX + RECT_WIDTH) &&
                 mouseY >= rectTopLeftY && mouseY <= (rectTopLeftY + RECT_HEIGHT)) {
             red = 255;
@@ -46,30 +46,29 @@ public class Problem03 extends PApplet {
             fill(255, 255, 0);
             textSize(20);
             text("Year: 1995. PYPL Index:2.", textLowX, textLowY);
+
         } else {
             red = 255;
             green = 255;
             blue = 255;
         }
-
             stroke(73, 113, 222);
             fill(0, 0, 255);
             rect(rectMidX, rectMidY, RECT_WIDTH, RECT_HEIGHT);
 
             fill(red, green, blue);
             textSize(31);
-            text("Kotlin Programming Language", rectMidX * 1.5f+ width/20f, rectMidY * 1.5f - height/12.25f);
+            text("Kotlin Programming Language", rectMidX * 1.5f + width/20f, rectMidY * 1.5f - height/11f);
             if (mouseX >= rectMidX && mouseX <= (rectMidX + RECT_WIDTH) &&
                     mouseY >= rectMidY && mouseY<=(rectMidY+RECT_HEIGHT)) {
 
-                red = 255;
-                green = 0;
-                blue = 0;
+                    red = 255;
+                    green = 0;
+                    blue = 0;
 
-            fill(255, 255, 0);
-                textSize(20);
-                text("Year: 2011. PYPL Index:11.", textLowX, textLowY);
-
+                    fill(255, 255, 0);
+                    textSize(20);
+                    text("Year: 2011. PYPL Index:11.", textLowX, textLowY);
             } else {
                 red = 255;
                 green = 255;
@@ -81,7 +80,7 @@ public class Problem03 extends PApplet {
 
                 fill(red, green, blue);
                 textSize(31);
-                text("Scala Programming Language", rectLowX * 1.5f+ width/20f, rectLowY * 1.5f - height/7f);
+                text("Scala Programming Language", rectLowX * 1.5f+ width/20f, rectLowY * 1.5f - height/6f);
                 if (mouseX >= rectLowX && mouseX <= (rectLowX + RECT_WIDTH) &&
                         mouseY >= rectLowY && mouseY<=(rectLowY+RECT_HEIGHT)) {
 

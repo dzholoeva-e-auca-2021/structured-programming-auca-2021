@@ -51,7 +51,7 @@ public class Problem04 extends PApplet {
             }
 
             stroke(0, 0, 100);
-            for (int i = 0; i < width; i++) {
+            for (float i = width/3f; i < width; i++) {
                 line(i * circleR, height / 6f, i * circleR, height / 1.5f);
             }
             stroke(0, 0, 100);
