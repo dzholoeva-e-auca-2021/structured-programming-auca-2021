@@ -40,10 +40,10 @@ float boardLowY;
 
     public void draw() {
         background(0, 0, 0);
-
+        rect(boardLeftX, boardTopY, boardWidth, boardHeight);
         for (float i = boardLeftX; i < boardRightX; i += squareX) {
             for (float j = boardTopY; j < boardLowY; j +=squareY) {
-                rect(i , j , (i + 1) , (j + 1));
+                rect(i , j , squareX , squareY);
 
                 if ((i + j + 1) % 2 == 0) {
                     fill(255);
