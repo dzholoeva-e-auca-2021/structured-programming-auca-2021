@@ -23,16 +23,23 @@ public class Problem04 {
             switch (dir) {
                 case 0:
                     dr = -1;
+                    break;
                 case 1:
                     dc = 1;
+                    break;
                 case 2:
                     dr = 1;
+                    break;
                 case 3:
                     dc = -1;
+                    break;
             }
             if (0 <= emptyRow + dr && emptyRow + dr < 4 && 0 <= emptyCol + dc && emptyCol + dc < 0) {
                 gameBoard[emptyRow][emptyCol] = gameBoard[emptyRow + dr][emptyCol + dc];
-
+            emptyRow += dr;
+            emptyCol += dc;
+                gameBoard[emptyRow][emptyCol] = 16;
+                ++nMove;
             }
         }
     }

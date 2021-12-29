@@ -26,7 +26,7 @@ public class Problem04 extends PApplet {
         boardTopX = width/5.5f;
         boardTopY = height/6f;
         boardLowX = width/1.2f;
-        boardLowY = height/1.25f;
+        boardLowY = height/1.2f;
         pointX = random(boardTopX, boardLowX);
         pointY = random(boardTopY, boardLowY);
         frameRate(10);
@@ -37,17 +37,18 @@ public class Problem04 extends PApplet {
         fill (0,0,0,50);
         rect(0,0,width,height);
 
-        fill(0,255,0);
+        {fill(0,255,0);
         textAlign(CENTER, CENTER);
         textSize(25);
         text("Game: Collect Yellow Circles using Arrow Buttons", width/2f, height/10f);
         text("Score:", width/2f, height/1.05f);
-        text(score, (width/2f + width/20f), height/1.05f);
-        fill(255, 255, 0);
-        circle(pointX, pointY, circleR);
+        text(score, (width/2f + width/20f), height/1.05f);}
 
-        fill(255, 0, 0);
-        circle(circleX, circleY, circleR);
+        {fill(255, 255, 0);
+        circle(pointX, pointY, circleR);}
+
+        {fill(255, 0, 0);
+        circle(circleX, circleY, circleR);}
 
         if (key == CODED) {
             switch (keyCode) {
@@ -85,31 +86,31 @@ public class Problem04 extends PApplet {
             circleY += dy;
 
             if (circleX >= boardLowX) {
-                circleX = boardLowX - circleR/2;
+                circleX = boardLowX - circleR/2f;
                 dx = -dx;
             }
             if (circleX <= boardTopX) {
-                circleX = boardTopX + circleR/2;
+                circleX = boardTopX + circleR/2f;
                 dx = -dx;
             }
             if (circleY >= boardLowY) {
-                circleY = boardLowY - circleR/2;
+                circleY = boardLowY - circleR/2f;
                 dy = -dy;
             }
             if (circleY <= boardTopY) {
-                circleY = boardTopY + circleR/2;
+                circleY = boardTopY + circleR/2f;
                 dy = -dy;
             }
-            if (circleX >= pointX && circleX <= pointX + circleR &&
-                    circleY >= pointY && circleY <= pointY + circleR) {
+            if (circleX > pointX && circleX < pointX + circleR &&
+                    circleY > pointY && circleY < pointY + circleR) {
                 pointX = pointA;
                 pointY = pointB;
-                pointA = random(boardTopX, boardLowX);
-                pointB = random(boardTopY, boardLowY);
+                pointA = random(boardTopX+1, boardLowX);
+                pointB = random(boardTopY+1, boardLowY);
                 score++;
             }
-            if (circleX >= pointA && circleX <= pointA + circleR &&
-                    circleY >= pointB && circleY <= pointB + circleR) {
+            if (circleX > pointA && circleX < pointA + circleR &&
+                    circleY > pointB && circleY < pointB + circleR) {
                 pointA = pointX;
                 pointB = pointY;
                 pointA = random(boardTopX, boardLowX);
