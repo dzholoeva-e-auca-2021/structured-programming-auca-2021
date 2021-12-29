@@ -9,6 +9,7 @@ float RECT_HEIGHT = 50;
 float red;
 float green;
 float blue;
+float Num_of_circles = 50;
     public void settings() {
         fullScreen();
     }
@@ -16,25 +17,22 @@ float blue;
     public void setup() {
         alpha = random(0, 2 * PI);
         textAlign(CENTER, CENTER);
+
     }
 
     public void draw() {
         background(0, 0, 0);
-
-        final float Num_of_circles = 50;
-        float radius_sun = 150;
+                float radius_sun = 150;
         float radius_venus = 70;
-        float radius_earth = 50;
         float radius_moon = 30;
-        float dr1 = radius_sun / Num_of_circles;
-        float dr2 = radius_venus / Num_of_circles;
-        float dr3 = radius_earth / Num_of_circles;
-        float dr4 = radius_moon / Num_of_circles;
+        float radius_earth = 50;
         float dComp = 255 / Num_of_circles;
         float comp = 5;
-
-
+        float dr4 = radius_moon / Num_of_circles;
+        float dr2 = radius_venus / Num_of_circles;
+        float dr1 = radius_sun / Num_of_circles;
         pushMatrix();
+
         translate(width / 2f, height / 2f);
         rotate(alpha);
         alpha += 0.05f;
@@ -48,8 +46,6 @@ float blue;
             fill(comp, comp, 0);
             circle(0, 0, radius_sun);
         }
-        dr2 = radius_venus / Num_of_circles;
-
         translate(200, 0);
             for (int i = 0; i < Num_of_circles; i++) {
                 noStroke();
@@ -59,12 +55,14 @@ float blue;
                 circle(0, 0, radius_venus);
             }
             translate(100, 0);
-        for (int i = 0; i < Num_of_circles; i++) {
+            for (int i = 0; i < Num_of_circles; i++) {
             noStroke();
-            comp += dComp;
+            comp += dComp;float
+                    dr3 = radius_earth / Num_of_circles;
             radius_earth -= dr3;
             fill(0, 0, comp);
             circle(0, 0, radius_earth);
+
         }
         translate(80, 0);
         rotate(beta);
