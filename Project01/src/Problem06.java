@@ -4,7 +4,7 @@ public class Problem06 extends PApplet {
 float alpha;
 float beta;
 float gamma;
-float RECT_WIDTH = 150;
+float RECT_WIDTH = 175;
 float RECT_HEIGHT = 50;
 float red;
 float green;
@@ -16,7 +16,9 @@ float Num_of_circles = 50;
 
     public void setup() {
         alpha = random(0, 2 * PI);
+        beta = random(0,2*PI);
         textAlign(CENTER, CENTER);
+        textSize(30);
 
     }
 
@@ -25,7 +27,7 @@ float Num_of_circles = 50;
                 float radius_sun = 150;
         float radius_venus = 70;
         float radius_moon = 30;
-        float radius_earth = 50;
+        float radius_earth = 70;
         float dComp = 255 / Num_of_circles;
         float comp = 5;
         float dr4 = radius_moon / Num_of_circles;
@@ -37,7 +39,6 @@ float Num_of_circles = 50;
         rotate(alpha);
         alpha += 0.05f;
         beta += 0.07f;
-        gamma += 0.09f;
 
         for (int i = 0; i < Num_of_circles; i++) {
             noStroke();
@@ -46,7 +47,8 @@ float Num_of_circles = 50;
             fill(comp, comp, 0);
             circle(0, 0, radius_sun);
         }
-        translate(200, 0);
+        comp = 5;
+        translate(150, 0);
             for (int i = 0; i < Num_of_circles; i++) {
                 noStroke();
                 comp += dComp;
@@ -54,18 +56,21 @@ float Num_of_circles = 50;
                 fill(0, 0, comp);
                 circle(0, 0, radius_venus);
             }
+            comp = 5;
             translate(100, 0);
             for (int i = 0; i < Num_of_circles; i++) {
             noStroke();
-            comp += dComp;float
-                    dr3 = radius_earth / Num_of_circles;
+            comp += dComp;
+            float dr3 = radius_earth / Num_of_circles;
             radius_earth -= dr3;
             fill(0, 0, comp);
             circle(0, 0, radius_earth);
 
         }
-        translate(80, 0);
-        rotate(beta);
+        comp = 5;
+        gamma += 0.07f;
+        rotate(gamma);
+        translate(50, 0);
         for (int i = 0; i < Num_of_circles; i++) {
                 comp += dComp;
                 fill(comp);
@@ -75,72 +80,65 @@ float Num_of_circles = 50;
 
             popMatrix();
 
-            float rectSunX = width / 1.25f - RECT_WIDTH / 2f;
-            float rectSunY = height / 4f - RECT_HEIGHT / 2f;
-            float rectVenusX = width / 1.25f - RECT_WIDTH / 2f;
-            float rectVenusY = height / 6f - RECT_HEIGHT / 2f;
-            float rectEarthX = width / 1.25f - RECT_WIDTH / 2f;
-            float rectEarthY = height / 8.5f - RECT_HEIGHT / 2f;
-            float rectMoonX = width / 1.25f - RECT_WIDTH / 2f;
-            float rectMoonY = height / 11f - RECT_HEIGHT / 2f;
+            float rectSunX = width / 1.2f - RECT_WIDTH / 2f;
+            float rectSunY = height / 10f - RECT_HEIGHT / 2f;
+            float rectVenusX = width / 1.2f - RECT_WIDTH / 2f;
+            float rectVenusY = height / 5.81f - RECT_HEIGHT / 2f;
+            float rectEarthX = width / 1.2f - RECT_WIDTH / 2f;
+            float rectEarthY = height / 4.14f - RECT_HEIGHT / 2f;
+            float rectMoonX = width / 1.2f - RECT_WIDTH / 2f;
+            float rectMoonY = height / 3.28f - RECT_HEIGHT / 2f;
 
-            {
-                stroke(73, 113, 222);
+        {
+                stroke(255);
                 fill(0, 0, 255);
                 rect(rectSunX, rectSunY, RECT_WIDTH, RECT_HEIGHT);
 
-                fill(red, green, blue);
-                textSize(15);
-                text("Sun", rectSunX, rectSunY - height / 50f);
-                if (mouseX >= rectSunX && mouseX <= (rectSunX + RECT_WIDTH) &&
-                        mouseY >= rectSunY && mouseY <= (rectSunY + RECT_HEIGHT)) {
-                    red = 255;
-                    green = 0;
-                    blue = 0;
+                    fill(red, green, blue);
+                    text("Sun", rectSunX+width/20f, rectSunY + height / 35f);
+                    if (mouseX >= rectSunX && mouseX <= (rectSunX + RECT_WIDTH) &&
+                            mouseY >= rectSunY && mouseY <= (rectSunY + RECT_HEIGHT)) {
+                        fill(255,0,0);
+                        text("Sun", rectSunX+width/20f, rectSunY + height / 35f);
 
 
-                } else {
-                    red = 255;
-                    green = 255;
-                    blue = 255;
-                }
-            }
-            {
+                    } else {
+                        red = 255;
+                        green = 255;
+                        blue = 255;
+                    }
+
                 stroke(255);
                 fill(0, 0, 255);
                 rect(rectVenusX, rectVenusY, RECT_WIDTH, RECT_HEIGHT);
 
                 fill(red, green, blue);
-                textSize(15);
-                text("Venus", rectVenusX, rectVenusY - height / 11f);
+                text("Venus", rectVenusX+width/20f, rectVenusY + height / 11f);
                 if (mouseX >= rectVenusX && mouseX <= (rectVenusX + RECT_WIDTH) &&
                         mouseY >= rectVenusY && mouseY <= (rectVenusY + RECT_HEIGHT)) {
+                    fill(255,0,0);
+                    text("Venus", rectVenusX+width/20f, rectVenusY + height / 11f);
 
-                    red = 255;
-                    green = 0;
-                    blue = 0;
-
+                    stroke(255,0,0);
+                    circle(CENTER, CENTER, radius_venus);
 
                 } else {
                     red = 255;
                     green = 255;
                     blue = 255;
                 }
-            }
-            {
+
+
                 stroke(255);
                 fill(0, 0, 255);
                 rect(rectEarthX, rectEarthY, RECT_WIDTH, RECT_HEIGHT);
 
                 fill(red, green, blue);
-                textSize(15);
-                text("Earth", rectEarthX, rectEarthY - height / 6f);
+                text("Earth", rectEarthX+width/20f, rectEarthY + height / 15f);
                 if (mouseX >= rectEarthX && mouseX <= (rectEarthX + RECT_WIDTH) &&
                         mouseY >= rectEarthY && mouseY <= (rectEarthY + RECT_HEIGHT)) {
-
-                    red = 255;
-                    green = 0;
-                    blue = 0;
+                    fill(255,0,0);
+                    text("Earth", rectEarthX+width/20f, rectEarthY + height / 15f);
 
 
                 } else {
@@ -148,22 +146,17 @@ float Num_of_circles = 50;
                     green = 255;
                     blue = 255;
                 }
-            }
-            {
+
                 stroke(255);
                 fill(0, 0, 255);
                 rect(rectMoonX, rectMoonY, RECT_WIDTH, RECT_HEIGHT);
 
                 fill(red, green, blue);
-                textSize(15);
-                text("Moon", rectMoonX, rectMoonY - height / 6f);
+                text("Moon", rectMoonX + width/20f, rectMoonY + height / 13f);
                 if (mouseX >= rectMoonX && mouseX <= (rectMoonX + RECT_WIDTH) &&
                         mouseY >= rectMoonY && mouseY <= (rectMoonY + RECT_HEIGHT)) {
-
-                    red = 255;
-                    green = 0;
-                    blue = 0;
-
+                    fill(255,0,0);
+                    text("Moon", rectMoonX + width/20f, rectMoonY + height / 13f);
 
                 } else {
                     red = 255;
