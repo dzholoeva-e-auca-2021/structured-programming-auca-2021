@@ -43,140 +43,139 @@ float blue;
 
         for (int i = 0; i < Num_of_circles; i++) {
             noStroke();
-            radius_sun -= dr1;
             comp += dComp;
+            radius_sun -= dr1;
             fill(comp, comp, 0);
             circle(0, 0, radius_sun);
         }
+        dr2 = radius_venus / Num_of_circles;
 
         translate(200, 0);
+            for (int i = 0; i < Num_of_circles; i++) {
+                noStroke();
+                comp += dComp;
+                radius_venus -= dr2;
+                fill(0, 0, comp);
+                circle(0, 0, radius_venus);
+            }
+            translate(100, 0);
         for (int i = 0; i < Num_of_circles; i++) {
             noStroke();
-            radius_venus -= dr2;
             comp += dComp;
-            fill(0, 0, comp);
-            circle(0, 0, radius_venus);
-        }
-
-        translate(100, 0);
-        for (int i = 0; i < Num_of_circles; i++) {
-            noStroke();
             radius_earth -= dr3;
-            comp += dComp;
             fill(0, 0, comp);
             circle(0, 0, radius_earth);
         }
-
-        rotate(beta);
         translate(80, 0);
+        rotate(beta);
         for (int i = 0; i < Num_of_circles; i++) {
-            noStroke();
-            radius_moon -= dr4;
-            comp += dComp;
-            fill(comp);
-            circle(0, 0, radius_moon);
-        }
+                comp += dComp;
+                fill(comp);
+                radius_moon -= dr4;
+                circle(0, 0, radius_moon);
+            }
 
-        popMatrix();
-        float rectSunX = width / 1.25f - RECT_WIDTH / 2f;
-        float rectSunY = height / 4f - RECT_HEIGHT / 2f;
-        float rectVenusX = width / 1.25f - RECT_WIDTH / 2f;
-        float rectVenusY = height / 6f - RECT_HEIGHT / 2f;
-        float rectEarthX = width / 1.25f - RECT_WIDTH / 2f;
-        float rectEarthY = height / 8.5f - RECT_HEIGHT / 2f;
-        float rectMoonX = width / 1.25f - RECT_WIDTH / 2f;
-        float rectMoonY = height / 11f - RECT_HEIGHT / 2f;
+            popMatrix();
 
-        {
-            stroke(73, 113, 222);
-            fill(0, 0, 255);
-            rect(rectSunX, rectSunY, RECT_WIDTH, RECT_HEIGHT);
+            float rectSunX = width / 1.25f - RECT_WIDTH / 2f;
+            float rectSunY = height / 4f - RECT_HEIGHT / 2f;
+            float rectVenusX = width / 1.25f - RECT_WIDTH / 2f;
+            float rectVenusY = height / 6f - RECT_HEIGHT / 2f;
+            float rectEarthX = width / 1.25f - RECT_WIDTH / 2f;
+            float rectEarthY = height / 8.5f - RECT_HEIGHT / 2f;
+            float rectMoonX = width / 1.25f - RECT_WIDTH / 2f;
+            float rectMoonY = height / 11f - RECT_HEIGHT / 2f;
 
-            fill(red, green, blue);
-            textSize(15);
-            text("Sun", rectSunX , rectSunY  - height / 50f);
-            if (mouseX >= rectSunX && mouseX <= (rectSunX + RECT_WIDTH) &&
-                    mouseY >= rectSunY && mouseY <= (rectSunY + RECT_HEIGHT)) {
-                red = 255;
-                green = 0;
-                blue = 0;
+            {
+                stroke(73, 113, 222);
+                fill(0, 0, 255);
+                rect(rectSunX, rectSunY, RECT_WIDTH, RECT_HEIGHT);
+
+                fill(red, green, blue);
+                textSize(15);
+                text("Sun", rectSunX, rectSunY - height / 50f);
+                if (mouseX >= rectSunX && mouseX <= (rectSunX + RECT_WIDTH) &&
+                        mouseY >= rectSunY && mouseY <= (rectSunY + RECT_HEIGHT)) {
+                    red = 255;
+                    green = 0;
+                    blue = 0;
 
 
-            } else {
-                red = 255;
-                green = 255;
-                blue = 255;
+                } else {
+                    red = 255;
+                    green = 255;
+                    blue = 255;
+                }
+            }
+            {
+                stroke(255);
+                fill(0, 0, 255);
+                rect(rectVenusX, rectVenusY, RECT_WIDTH, RECT_HEIGHT);
+
+                fill(red, green, blue);
+                textSize(15);
+                text("Venus", rectVenusX, rectVenusY - height / 11f);
+                if (mouseX >= rectVenusX && mouseX <= (rectVenusX + RECT_WIDTH) &&
+                        mouseY >= rectVenusY && mouseY <= (rectVenusY + RECT_HEIGHT)) {
+
+                    red = 255;
+                    green = 0;
+                    blue = 0;
+
+
+                } else {
+                    red = 255;
+                    green = 255;
+                    blue = 255;
+                }
+            }
+            {
+                stroke(255);
+                fill(0, 0, 255);
+                rect(rectEarthX, rectEarthY, RECT_WIDTH, RECT_HEIGHT);
+
+                fill(red, green, blue);
+                textSize(15);
+                text("Earth", rectEarthX, rectEarthY - height / 6f);
+                if (mouseX >= rectEarthX && mouseX <= (rectEarthX + RECT_WIDTH) &&
+                        mouseY >= rectEarthY && mouseY <= (rectEarthY + RECT_HEIGHT)) {
+
+                    red = 255;
+                    green = 0;
+                    blue = 0;
+
+
+                } else {
+                    red = 255;
+                    green = 255;
+                    blue = 255;
+                }
+            }
+            {
+                stroke(255);
+                fill(0, 0, 255);
+                rect(rectMoonX, rectMoonY, RECT_WIDTH, RECT_HEIGHT);
+
+                fill(red, green, blue);
+                textSize(15);
+                text("Moon", rectMoonX, rectMoonY - height / 6f);
+                if (mouseX >= rectMoonX && mouseX <= (rectMoonX + RECT_WIDTH) &&
+                        mouseY >= rectMoonY && mouseY <= (rectMoonY + RECT_HEIGHT)) {
+
+                    red = 255;
+                    green = 0;
+                    blue = 0;
+
+
+                } else {
+                    red = 255;
+                    green = 255;
+                    blue = 255;
+                }
             }
         }
-        {
-            stroke(73, 113, 222);
-            fill(0, 0, 255);
-            rect(rectVenusX, rectVenusY, RECT_WIDTH, RECT_HEIGHT);
-
-            fill(red, green, blue);
-            textSize(15);
-            text("Venus", rectVenusX , rectVenusY - height / 11f);
-            if (mouseX >= rectVenusX && mouseX <= (rectVenusX + RECT_WIDTH) &&
-                    mouseY >= rectVenusY && mouseY <= (rectVenusY + RECT_HEIGHT)) {
-
-                red = 255;
-                green = 0;
-                blue = 0;
-
-
-            } else {
-                red = 255;
-                green = 255;
-                blue = 255;
-            }
+        public static void main (String[]args){
+            PApplet.main("Problem06");
         }
-        {
-            stroke(73, 113, 222);
-            fill(0, 0, 255);
-            rect(rectEarthX, rectEarthY, RECT_WIDTH, RECT_HEIGHT);
-
-            fill(red, green, blue);
-            textSize(15);
-            text("Earth", rectEarthX, rectEarthY - height / 6f);
-            if (mouseX >= rectEarthX && mouseX <= (rectEarthX + RECT_WIDTH) &&
-                    mouseY >= rectEarthY && mouseY <= (rectEarthY + RECT_HEIGHT)) {
-
-                red = 255;
-                green = 0;
-                blue = 0;
-
-
-            } else {
-                red = 255;
-                green = 255;
-                blue = 255;
-            }
-        }
-        {
-            stroke(73, 113, 222);
-            fill(0, 0, 255);
-            rect(rectMoonX, rectMoonY, RECT_WIDTH, RECT_HEIGHT);
-
-            fill(red, green, blue);
-            textSize(15);
-            text("Moon", rectMoonX, rectMoonY - height / 6f);
-            if (mouseX >= rectMoonX && mouseX <= (rectMoonX + RECT_WIDTH) &&
-                    mouseY >= rectMoonY && mouseY <= (rectMoonY + RECT_HEIGHT)) {
-
-                red = 255;
-                green = 0;
-                blue = 0;
-
-
-            } else {
-                red = 255;
-                green = 255;
-                blue = 255;
-            }
-        }
-    }
-    public static void main(String[] args) {
-        PApplet.main("Problem06");
-    }
 
 }
