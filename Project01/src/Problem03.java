@@ -41,9 +41,8 @@ public class Problem03 extends PApplet {
                     rectTopLeftY * 1.5f - height / 50f);
             if (mouseX >= rectTopLeftX && mouseX <= (rectTopLeftX + RECT_WIDTH) &&
                     mouseY >= rectTopLeftY && mouseY <= (rectTopLeftY + RECT_HEIGHT)) {
-                red = 255;
-                green = 0;
-                blue = 0;
+                fill(255,0,0);
+                text("Java Programming Language", rectTopLeftX * 1.5f + width / 20f,rectTopLeftY * 1.5f - height / 50f);
 
                 fill(255, 255, 0);
                 textSize(20);
@@ -65,10 +64,8 @@ public class Problem03 extends PApplet {
             text("Kotlin Programming Language", rectMidX * 1.5f + width/20f, rectMidY * 1.5f - height/11f);
             if (mouseX >= rectMidX && mouseX <= (rectMidX + RECT_WIDTH) &&
                     mouseY >= rectMidY && mouseY<=(rectMidY+RECT_HEIGHT)) {
-
-                    red = 255;
-                    green = 0;
-                    blue = 0;
+                fill(255,0,0);
+                text("Kotlin Programming Language", rectMidX * 1.5f + width/20f, rectMidY * 1.5f - height/11f);
 
                     fill(255, 255, 0);
                     textSize(20);
@@ -83,15 +80,13 @@ public class Problem03 extends PApplet {
             fill(0, 0, 255);
             rect(rectLowX, rectLowY, RECT_WIDTH, RECT_HEIGHT);
 
-            fill(red, green, blue);
+            fill(red,green,blue);
             textSize(31);
             text("Scala Programming Language", rectLowX * 1.5f + width / 20f, rectLowY * 1.5f - height / 6f);
             if (mouseX >= rectLowX && mouseX <= (rectLowX + RECT_WIDTH) &&
                     mouseY >= rectLowY && mouseY <= (rectLowY + RECT_HEIGHT)) {
-
-                red = 255;
-                green = 0;
-                blue = 0;
+                fill(255,0,0);
+                text("Scala Programming Language", rectLowX * 1.5f + width / 20f, rectLowY * 1.5f - height / 6f);
 
                 fill(255, 255, 0);
                 textSize(20);
