@@ -103,13 +103,10 @@ float Num_of_circles = 50;
                 fill(255, 0, 0);
                 text("Sun", rectSunX + width / 15f, rectSunY + height / 35f);
 
-                {
-
                     stroke(255, 0, 0);
-                strokeWeight(5);
+                strokeWeight(1);
                 noFill();
                     circle(width/2f, height/2f, radius_sun);
-                }
             } else {
                 red = 255;
                 green = 255;
@@ -128,12 +125,14 @@ float Num_of_circles = 50;
                 fill(255, 0, 0);
                 text("Venus", rectVenusX + width / 15f, rectVenusY + height / 30f);
 
-                rotate(alpha);
-                translate(100, 0);
+                    pushMatrix();
+                    rotate(alpha);
+                    translate(150,0);
                     stroke(255, 0, 0);
                     noFill();
                     strokeWeight(1);
                     circle(0, 0, radius_venus);
+                    popMatrix();
 
             } else {
                 red = 255;
@@ -154,11 +153,10 @@ float Num_of_circles = 50;
                     fill(255,0,0);
                     text("Earth", rectEarthX+width/15f, rectEarthY + height / 30f);
 
-                    translate(100,0);
                     stroke(255, 0, 0);
-                    strokeWeight(5);
+                    strokeWeight(1);
                     noFill();
-                    circle(0, 0, radius_earth);
+                    circle(width/3f, height/3f, radius_earth);
                 } else {
                     red = 255;
                     green = 255;
@@ -177,12 +175,10 @@ float Num_of_circles = 50;
                 fill(255, 0, 0);
                 text("Moon", rectMoonX + width / 15f, rectMoonY + height / 31f);
 
-                translate(50,0);
-                rotate(gamma);
                 stroke(255, 0, 0);
-                strokeWeight(5);
+                strokeWeight(1);
                 noFill();
-                circle(0,0, radius_moon);
+                circle(width/4f,height/4f, radius_moon);
             } else {
                 red = 255;
                 green = 255;
