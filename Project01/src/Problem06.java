@@ -17,6 +17,7 @@ float Num_of_circles = 50;
     public void setup() {
         alpha = random(0, 2 * PI);
         beta = random(0,2*PI);
+        gamma = random(0, 2*PI);
         textAlign(CENTER, CENTER);
         textSize(30);
 
@@ -53,7 +54,7 @@ float Num_of_circles = 50;
                 noStroke();
                 comp += dComp;
                 radius_venus -= dr2;
-                fill(0, 0, comp);
+                fill(0, comp, comp);
                 circle(0, 0, radius_venus);
             }
             comp = 5;
