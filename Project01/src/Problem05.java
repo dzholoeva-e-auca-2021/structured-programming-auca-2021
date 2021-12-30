@@ -45,14 +45,13 @@ public class Problem05 extends PApplet {
         rect(boardLeftX, boardTopY, boardWidth, boardHeight);
         {
             for (float i = boardLeftX; i < boardRightX; i += squareX) {
-                rect(i, boardTopY, squareX, squareY);
-            }
                 for (float i = boardTopY; i < boardLowY; i += squareY) {
-                    rect(i, boardRightX, squareX, squareY);
-                if (i % 2 == 0) {
-                    fill(255);
-                } else {
-                    fill(0);
+
+                    if (i % 2 == 0) {
+                        fill(255);
+                    } else {
+                        fill(0);
+                    }
                 }
             }
         }

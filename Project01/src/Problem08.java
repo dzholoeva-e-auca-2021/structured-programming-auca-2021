@@ -2,6 +2,7 @@ import processing.core.*;
 
 public class Problem08 extends PApplet {
     float rays;
+    float alpha;
     float red;
     float blue;
     float green;
@@ -12,6 +13,7 @@ public class Problem08 extends PApplet {
     }
 
     public void setup() {
+        alpha = random(0, 2*PI);
         textSize(30);
 
     }
@@ -75,8 +77,13 @@ public class Problem08 extends PApplet {
         noFill();
         square(width/4f-width/20f, height/1.5f, 30);
 
+        alpha -= 0.08f;
         translate(width/2f, height/2f);
-        drawStar(100, red, green, blue);
+        rotate(alpha);
+        translate(width/2f, height/2f);
+        drawStar(100, 255, green, blue);
+
+
     }
 
     private void drawStar( float r, float red, float green, float blue) {
