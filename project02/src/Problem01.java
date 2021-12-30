@@ -1,11 +1,16 @@
 import processing.core.*;
 
+import java.util.Random;
+
 public class Problem01 extends PApplet {
     int nMoves = 0;
     static int[][] gameBoard = new int[4][4];
-
-float squareX = width/1f;
-float squareY = height/1f;
+float NUM_OF_SHUFFLE_MOVES = 3;
+float squareX = width/1.1f;
+float squareY = height/1.1f;
+int emptyRow;
+int emptyCol;
+    static Random rnd = new Random();
     public void settings() {
         fullScreen();
 
@@ -19,18 +24,47 @@ float squareY = height/1f;
 
         if (keyPressed && key == CODED) {
                 System.out.println("Some key pressed");
+                shuffleBoard();
             }
         }
 
-        public void keyReleased () {
-            System.out.println("Key released");
-            nMoves++;
+    private void shuffleBoard() {
+        int nMove = 0;
+        while (nMove < NUM_OF_SHUFFLE_MOVES) {
+            int dir = rnd.nextInt(4);
+            int dr = 0;
+            int dc = 0;
+            switch (dir) {
+                case 0:
+                    dr = -1;
+                    break;
+                case 1:
+                    dc = 1;
+                    break;
+                case 2:
+                    dr = 1;
+                    break;
+                case 3:
+                    dc = -1;
+                    break;
+            }
+            if (0 <= emptyRow + dr && emptyRow + dr < 4 && 0 <= emptyCol + dc && emptyCol + dc < 0) {
+                gameBoard[emptyRow][emptyCol] = gameBoard[emptyRow + dr][emptyCol + dc];
+                emptyRow += dr;
+                emptyCol += dc;
+                gameBoard[emptyRow][emptyCol] = 16;
+                ++nMove;
+            }
+        }
+    }
+
+    public void keyReleased () {
+            shuffleBoard();
 
         }
 
         public void mouseReleased () {
-                System.out.println("Mouse released");
-                nMoves++;
+                shuffleBoard();
             }
 
     public void draw() {
