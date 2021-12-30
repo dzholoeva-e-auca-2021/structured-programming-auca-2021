@@ -23,7 +23,7 @@ public class Problem03 extends PApplet {
 
         int n = 8;
         float alpha = 0;
-        float dAlpha = 2*PI/8;
+        float dAlpha = 2*PI/n;
 
 
         translate(centerX,centerY);
