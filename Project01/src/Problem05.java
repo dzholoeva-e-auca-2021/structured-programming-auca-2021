@@ -12,6 +12,8 @@ public class Problem05 extends PApplet {
     float boardRightX;
     float boardTopY;
     float boardLowY;
+    float row;
+    float col;
 
     public void settings() {
         fullScreen();
@@ -36,6 +38,8 @@ public class Problem05 extends PApplet {
         boardRightX = width / 8f;
         boardTopY = height / 11f;
         boardLowY = height / 1.5f;
+        row = boardWidth / size;
+        col = boardHeight / size;
     }
 
 
@@ -44,18 +48,12 @@ public class Problem05 extends PApplet {
         fill(255);
         rect(boardLeftX, boardTopY, boardWidth, boardHeight);
         {
-            for (float i = boardLeftX; i < boardRightX; i += squareX) {
-                for (float i = boardTopY; i < boardLowY; i += squareY) {
+            while (squareY < boardLowY + boardHeight) {
+                row += 2;
 
-                    if (i % 2 == 0) {
-                        fill(255);
-                    } else {
-                        fill(0);
-                    }
                 }
             }
         }
-    }
     public static void main(String[] args) {
         PApplet.main("Problem05");
     }
