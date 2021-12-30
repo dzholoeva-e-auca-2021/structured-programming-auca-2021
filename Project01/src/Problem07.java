@@ -38,36 +38,30 @@ float beta;
 
     public void draw() {
         background(0);
-        alpha += 0.05f;
-        beta += 0.07f;
-
-        rotate(alpha);
+        alpha -= 0.08f;
         translate(width/2f, height/2f);
-        drawStar( 0,0,100f,255f,0,0f);
+        rotate(alpha);
+        drawStar( 0,0,rays,height/5f, 255f,0f,0f);
 
-
-
-        if (stars>=8 && stars <= 12) {
-            for (int i = 1; i <= stars; i++) {
+            for (int i = 1; i < stars; i++) {
                 pushMatrix();
                 rotate(beta);
-                drawStar(width / 3f, height / 3f, 50f, 0, 0, 255);
+                translate(250, 0);
+                drawStar(0, 0, rays, height/25f, 0, 0, 255);
+                beta += 2*PI/stars + 0.018;
                 popMatrix();}
         }
-    }
 
-    private void drawStar(float centerX, float centerY, float r, float red, float green, float blue) {
-
-        float n = 2 * rays;
+    private void drawStar(float centerX, float centerY, float rays, float r, float red, float green, float blue) {
+        pushMatrix();
         float alpha = 0;
-        float dAlpha = 2 * PI / n;
+        float dAlpha = 2 * PI /rays;
 
-
-        stroke(red, green, blue);
         translate(centerX, centerY);
+        stroke(red, green, blue);
         float prevX = 0;
         float prevY = 0;
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i <= rays; i++) {
             float curR = r;
             if (i % 2 == 1) {
                 curR /= 4;
@@ -75,13 +69,14 @@ float beta;
             float x = curR * cos(alpha);
             float y = curR * sin(alpha);
             line(0, 0, x, y);
+            alpha += dAlpha;
 
             line(prevX, prevY, x, y);
             prevX = x;
             prevY = y;
-            alpha += dAlpha;
 
         }
+        popMatrix();
     }
     public static void main(String[] args) {
         PApplet.main("Problem07");
